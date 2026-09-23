@@ -1,0 +1,25 @@
+﻿[OK]   Policy: NoAutoUpdate=1 / AUOptions=1 (disable auto update)
+[OK]   Policy: DisableOSUpgrade=1 (block feature update push)
+[OK]   Policy: DODownloadMode=0 (disable Delivery Optimization P2P)
+[OK]   Service: Windows Update (wuauserv) -> disabled
+[OK]   Service: Update Orchestrator (UsoSvc) -> disabled
+[OK]   Service: Delivery Optimization (DoSvc) -> disabled
+[OK]   Service: WaaSMedic (prevents re-enable) (WaaSMedicSvc) -> disabled
+[OK]   Stop service: wuauserv
+[OK]   Stop service: UsoSvc
+[OK]   Stop service: DoSvc
+[FAIL] Task: \Microsoft\Windows\WindowsUpdate\Refresh Group Policy Cache -> FAILED (OS protected, does not affect main goal)
+[OK]   Task: \Microsoft\Windows\WindowsUpdate\Scheduled Start -> disabled
+[FAIL] Task: \Microsoft\Windows\UpdateOrchestrator\Report policies -> FAILED (OS protected, does not affect main goal)
+[OK]   Task: \Microsoft\Windows\UpdateOrchestrator\Schedule Maintenance Work -> disabled
+[FAIL] Task: \Microsoft\Windows\UpdateOrchestrator\Schedule Scan -> FAILED (OS protected, does not affect main goal)
+[FAIL] Task: \Microsoft\Windows\UpdateOrchestrator\Schedule Scan Static Task -> FAILED (OS protected, does not affect main goal)
+[OK]   Task: \Microsoft\Windows\UpdateOrchestrator\Schedule Wake To Work -> disabled
+[OK]   Task: \Microsoft\Windows\UpdateOrchestrator\Schedule Work -> disabled
+[FAIL] Task: \Microsoft\Windows\UpdateOrchestrator\Start Oobe Expedite Work -> FAILED (OS protected, does not affect main goal)
+[FAIL] Task: \Microsoft\Windows\UpdateOrchestrator\StartOobeAppsScanAfterUpdate -> FAILED (OS protected, does not affect main goal)
+[FAIL] Task: \Microsoft\Windows\UpdateOrchestrator\StartOobeAppsScan_LicenseAccepted -> FAILED (OS protected, does not affect main goal)
+[FAIL] Task: \Microsoft\Windows\UpdateOrchestrator\UIEOrchestrator -> FAILED (OS protected, does not affect main goal)
+[FAIL] Task: \Microsoft\Windows\UpdateOrchestrator\USO_UxBroker -> FAILED (OS protected, does not affect main goal)
+[FAIL] Task: \Microsoft\Windows\UpdateOrchestrator\UUS Failover Task -> FAILED (OS protected, does not affect main goal)
+[FAIL] Task: \Microsoft\Windows\WaaSMedic\PerformRemediation -> FAILED (OS protected, does not affect main goal)

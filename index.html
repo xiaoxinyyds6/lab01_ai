@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>林炯汉 — 个人作品集</title>
+<meta name="description" content="林炯汉的个人作品集：软件工程专业在读，关注 AI 辅助开发与大语言模型技术，擅长 Python、Java、TypeScript。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23c8451f'/%3E%3Ctext x='32' y='45' font-size='36' text-anchor='middle' fill='%23f4efe6' font-family='serif' font-weight='bold'%3E%E6%9E%97%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700;900&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- ============ 顶部导航 ============ -->
+<header class="nav" id="nav">
+  <div class="wrap nav__inner">
+    <a class="nav__brand" href="#hero">
+      林炯汉<span class="nav__brand-en">PORTFOLIO</span>
+    </a>
+
+    <nav class="nav__links" id="navLinks" aria-label="主导航">
+      <a href="#hero" class="nav__link is-active"><i>01</i>首页</a>
+      <a href="#works" class="nav__link"><i>02</i>项目作品</a>
+      <a href="#about" class="nav__link"><i>03</i>关于我</a>
+      <a href="#journey" class="nav__link"><i>04</i>我的足迹</a>
+      <a href="#contact" class="nav__link"><i>05</i>联系方式</a>
+    </nav>
+
+    <button class="nav__toggle" id="navToggle" aria-label="打开菜单" aria-expanded="false">
+      <span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main>
+
+  <!-- ============ 首屏 ============ -->
+  <section class="hero" id="hero">
+    <div class="wrap">
+      <p class="eyebrow reveal"><span class="eyebrow__mark"></span>01 — PORTFOLIO / 2026</p>
+
+      <h1 class="hero__title reveal" style="--d:.06s">
+        <span class="hero__line">林炯汉</span>
+        <span class="hero__line hero__line--outline">Jionghan&nbsp;Lin</span>
+      </h1>
+
+      <div class="hero__foot reveal" style="--d:.14s">
+        <p class="hero__lede">
+          软件工程专业<em>在读</em>，主要关注 <strong>AI 辅助开发</strong> 与
+          <strong>大语言模型应用</strong>。平时用 Python、Java、TypeScript 做项目，
+          也在持续学习前后端、数据可视化和 AI 应用构建。
+        </p>
+        <ul class="hero__meta">
+          <li><span>方向</span><b>AI 辅助开发 / 大语言模型</b></li>
+          <li><span>主修</span><b>Python · Java · TypeScript</b></li>
+          <li><span>状态</span><b class="is-accent">广州软件学院 · 在读</b></li>
+        </ul>
+      </div>
+
+      <ul class="hero__stats reveal" style="--d:.22s">
+        <li><b>05</b><span>项目作品 / Works</span></li>
+        <li><b>16+</b><span>技术栈 / Stack</span></li>
+        <li><b>03</b><span>年级 / Junior</span></li>
+        <li><b class="is-accent">∞</b><span>持续更新 / Updating</span></li>
+      </ul>
+    </div>
+    <div class="hero__scroll" aria-hidden="true">向下滚动 <span class="hero__scroll-line"></span></div>
+  </section>
+
+  <!-- ============ 跑马灯分隔带 ============ -->
+  <div class="ticker" aria-hidden="true">
+    <div class="ticker__track">
+      <span class="ticker__seq">
+        <span>AI 辅助开发</span><i>◆</i><span>大语言模型</span><i>◆</i><span>PYTHON</span><i>◆</i><span>JAVA</span><i>◆</i><span>TYPESCRIPT</span><i>◆</i><span>数据可视化</span><i>◆</i><span>微信小程序</span><i>◆</i><span>SPRING BOOT</span><i>◆</i><span>代码即作品</span><i>◆</i>
+      </span>
+      <span class="ticker__seq">
+        <span>AI 辅助开发</span><i>◆</i><span>大语言模型</span><i>◆</i><span>PYTHON</span><i>◆</i><span>JAVA</span><i>◆</i><span>TYPESCRIPT</span><i>◆</i><span>数据可视化</span><i>◆</i><span>微信小程序</span><i>◆</i><span>SPRING BOOT</span><i>◆</i><span>代码即作品</span><i>◆</i>
+      </span>
+    </div>
+  </div>
+
+  <!-- ============ 项目作品 ============ -->
+  <section class="works" id="works">
+    <div class="wrap">
+      <header class="sec-head reveal">
+        <div class="sec-head__left">
+          <p class="eyebrow"><span class="eyebrow__mark"></span>02 — SELECTED WORKS</p>
+          <h2 class="sec-head__title">项目作品</h2>
+        </div>
+        <p class="sec-head__note">
+          以下为个人项目经历，按完成时间倒序排列。<br>
+          每个项目均可展开查看设计说明。
+        </p>
+      </header>
+
+      <!-- 分类筛选 -->
+      <div class="filter reveal" id="filter" role="tablist" aria-label="项目分类">
+        <span class="filter__label">筛选</span>
+        <!-- 按钮由 js/main.js 依据 data.js 自动派生 -->
+      </div>
+
+      <!-- 项目挂载点：内容全部由 js/main.js 渲染 -->
+      <div class="works__list" id="worksList"></div>
+
+      <p class="works__end reveal" id="worksEnd">— 未完待续 —</p>
+    </div>
+  </section>
+
+  <!-- ============ 关于我 ============ -->
+  <section class="about" id="about">
+    <div class="wrap about__grid">
+      <div class="about__main">
+        <header class="sec-head sec-head--plain reveal">
+          <p class="eyebrow"><span class="eyebrow__mark"></span>03 — ABOUT</p>
+          <h2 class="sec-head__title">关于我</h2>
+        </header>
+
+        <div class="about__body reveal" style="--d:.08s">
+          <p class="about__drop">
+            平时我喜欢用代码解决真实的小问题：遇到麻烦，就试着写段程序或做个工具，
+            把它从"想想"变成"真能跑起来"。这几年在 Python、Java、TypeScript 之间来回切换，
+            越来越觉得工具是手段，把产品做出来才是目的。
+          </p>
+          <p>
+            最近的热忱集中在 AI 辅助开发与大语言模型应用——与其追赶"哪个大模型更强"，
+            我更乐意琢磨怎么把 LLM 接进开发、测试和提效的具体环节，让它在手头的活里真正用得顺手。
+            那些从课程里学到的数据结构、数据库和前后端知识，也正是在动手做的过程中慢慢内化成了能力。
+          </p>
+          <blockquote class="about__quote">
+            "让工具做工具该做的事，<br>把时间留给真正有意思的问题。"
+            <cite>— 我的编程信条</cite>
+          </blockquote>
+          <p>
+            从记账小程序到 LLM 代码审查工具，我的项目大多从自己的真实需求出发：
+            遇到问题，就想办法用代码解决它，并在过程中把新技术真正用起来。
+            下一个阶段，我希望把 AI 辅助开发这条链路走得更深，
+            也补齐前端工程化与系统设计的短板，做一个能独立交付完整产品的人。
+          </p>
+        </div>
+      </div>
+
+      <aside class="about__side reveal" style="--d:.16s">
+        <div class="skill">
+          <p class="skill__title">技能方向</p>
+          <ul class="skill__list">
+            <li><span class="skill__name">Python</span><i class="skill__leader"></i><em class="skill__lv">主力</em></li>
+            <li><span class="skill__name">Java</span><i class="skill__leader"></i><em class="skill__lv">主力</em></li>
+            <li><span class="skill__name">TypeScript</span><i class="skill__leader"></i><em class="skill__lv">主力</em></li>
+            <li><span class="skill__name">HTML / CSS</span><i class="skill__leader"></i><em class="skill__lv">熟练</em></li>
+            <li><span class="skill__name">数据可视化</span><i class="skill__leader"></i><em class="skill__lv">熟练</em></li>
+            <li><span class="skill__name">AI 应用构建</span><i class="skill__leader"></i><em class="skill__lv">进阶中</em></li>
+          </ul>
+        </div>
+
+        <div class="tools">
+          <p class="tools__title">常用工具</p>
+          <div class="tools__chips">
+            <span>VS Code</span><span>Git</span><span>微信开发者工具</span>
+            <span>PyCharm</span><span>IntelliJ IDEA</span><span>Linux</span>
+            <span>ECharts</span><span>Cursor</span><span>GitHub Copilot</span>
+            <span>Swagger</span><span>MySQL</span><span>Redis</span>
+          </div>
+        </div>
+
+        <figure class="about__figure">
+          <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=editorial%20magazine%20portrait%20sketch%20of%20a%20young%20asian%20male%20university%20student%20in%20a%20knit%20sweater%2C%20charcoal%20ink%20with%20one%20vermilion%20scarf%20accent%20on%20cream%20paper%2C%20minimal%20background%2C%20simple%20confident%20pose&image_size=portrait_4_3" alt="林炯汉的肖像">
+          <figcaption>FIG.00 — 肖像 / 广州 · 好好学习，认真写码</figcaption>
+        </figure>
+      </aside>
+    </div>
+  </section>
+
+  <!-- ============ 我的足迹 ============ -->
+  <section class="journey" id="journey">
+    <div class="wrap">
+      <header class="sec-head reveal">
+        <div class="sec-head__left">
+          <p class="eyebrow"><span class="eyebrow__mark"></span>04 — JOURNEY</p>
+          <h2 class="sec-head__title">我的足迹</h2>
+        </div>
+        <p class="sec-head__note">从第一行代码到现在，<br>每一步都算数。</p>
+      </header>
+
+      <ol class="timeline">
+        <li class="timeline__item reveal">
+          <span class="timeline__year">2023</span>
+          <span class="timeline__dot" aria-hidden="true"></span>
+          <div class="timeline__body">
+            <h3>入学 · 初识代码</h3>
+            <p>进入广州软件学院软件工程专业，从 C 语言与计算机基础学起，在机房写下人生第一行 "Hello, World"，从此对"能让机器听话"这件事着了迷。</p>
+          </div>
+        </li>
+        <li class="timeline__item reveal" style="--d:.06s">
+          <span class="timeline__year">2024</span>
+          <span class="timeline__dot" aria-hidden="true"></span>
+          <div class="timeline__body">
+            <h3>打底 · 双线并进</h3>
+            <p>Python 与 Java 双线学习，啃数据结构与数据库，完成多个课程设计；开始用 Git 管理代码、在 Linux 下折腾环境，养成了写技术笔记的习惯。</p>
+          </div>
+        </li>
+        <li class="timeline__item reveal" style="--d:.12s">
+          <span class="timeline__year">2025</span>
+          <span class="timeline__dot" aria-hidden="true"></span>
+          <div class="timeline__body">
+            <h3>实践 · 项目爆发</h3>
+            <p>接连完成轻记账小程序、数据可视化仪表盘、Spring Boot 后端服务，再到 LLM 对话应用与 AI 代码审查工具——把课堂知识写成了真正能跑的应用。</p>
+          </div>
+        </li>
+        <li class="timeline__item reveal" style="--d:.18s">
+          <span class="timeline__year">2026</span>
+          <span class="timeline__dot" aria-hidden="true"></span>
+          <div class="timeline__body">
+            <h3>深耕 · 拥抱 AI</h3>
+            <p>聚焦 AI 辅助开发与大语言模型应用，探索 LLM 在代码审查、效率工具中的落地方式；同时补齐前端工程化短板，目标是独立交付一个完整的产品。</p>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ============ 联系方式 ============ -->
+  <section class="contact" id="contact">
+    <div class="wrap">
+      <header class="sec-head sec-head--plain reveal">
+        <p class="eyebrow"><span class="eyebrow__mark"></span>05 — CONTACT</p>
+        <h2 class="contact__title">来聊聊<em>。</em></h2>
+      </header>
+
+      <p class="contact__lede reveal" style="--d:.06s">
+        无论是项目协作、技术交流，还是聊 AI 辅助开发和 LLM 的奇技淫巧，都欢迎随时找我。
+      </p>
+
+      <ul class="contact__list reveal" style="--d:.12s">
+        <li>
+          <a class="contact__row" href="mailto:linjionghan@example.com">
+            <span class="contact__k">邮箱 / Email</span>
+            <span class="contact__v">linjionghan@example.com</span>
+            <span class="contact__a">→</span>
+          </a>
+        </li>
+        <li>
+          <a class="contact__row" href="https://github.com/" target="_blank" rel="noopener">
+            <span class="contact__k">代码 / GitHub</span>
+            <span class="contact__v">github.com/linjionghan</span>
+            <span class="contact__a">→</span>
+          </a>
+        </li>
+        <li>
+          <div class="contact__row contact__row--static">
+            <span class="contact__k">学校 / School</span>
+            <span class="contact__v">广州软件学院 · 软件工程</span>
+            <span class="contact__a">⌘</span>
+          </div>
+        </li>
+        <li>
+          <div class="contact__row contact__row--static">
+            <span class="contact__k">所在地 / Location</span>
+            <span class="contact__v">中国 · 广州</span>
+            <span class="contact__a">⌘</span>
+          </div>
+        </li>
+      </ul>
+      <p class="contact__note">* 邮箱与 GitHub 为占位信息，请替换为真实联系方式。</p>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============ 页尾跑马灯 ============ -->
+<div class="ticker ticker--flip" aria-hidden="true">
+  <div class="ticker__track">
+    <span class="ticker__seq">
+      <span>THANKS FOR WATCHING</span><i>◆</i><span>保持好奇</span><i>◆</i><span>持续构建</span><i>◆</i><span>OPEN TO WORK</span><i>◆</i><span>FIN.</span><i>◆</i>
+    </span>
+    <span class="ticker__seq">
+      <span>THANKS FOR WATCHING</span><i>◆</i><span>保持好奇</span><i>◆</i><span>持续构建</span><i>◆</i><span>OPEN TO WORK</span><i>◆</i><span>FIN.</span><i>◆</i>
+    </span>
+  </div>
+</div>
+
+<footer class="foot">
+  <div class="wrap foot__inner">
+    <span class="foot__copy">© 2026 林炯汉 · 个人作品集</span>
+    <span class="foot__fin">Fin.</span>
+    <a class="foot__top" href="#hero">回到顶部 ↑</a>
+  </div>
+</footer>
+
+<script src="js/data.js?v=20260923"></script>
+<script src="js/main.js?v=20260923"></script>
+</body>
+</html>
