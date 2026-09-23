@@ -10,6 +10,37 @@
 (function () {
   'use strict';
 
+  /* ---------- 0. 主题系统 ---------- */
+  const THEME_KEY = 'portfolio-theme';
+  const themeBtn = document.getElementById('themeToggle');
+
+  function setTheme(theme) {
+    document.documentElement.setAttribute('data-theme', theme);
+    if (themeBtn) {
+      // 图标显示"可切换到的主题"：浅色→🌙(切深色)，深色→☀️(切浅色)
+      themeBtn.textContent = theme === 'dark' ? '☀️' : '🌙';
+      themeBtn.setAttribute('aria-label', theme === 'dark' ? '切换浅色主题' : '切换深色主题');
+    }
+    try { localStorage.setItem(THEME_KEY, theme); } catch (_) {}
+  }
+
+  // 初始化：优先 localStorage，其次系统偏好，默认 light
+  (function initTheme() {
+    let saved = 'light';
+    try {
+      saved = localStorage.getItem(THEME_KEY) || '';
+    } catch (_) {}
+    if (saved !== 'light' && saved !== 'dark') {
+      saved = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    }
+    setTheme(saved);
+  })();
+
+  themeBtn && themeBtn.addEventListener('click', () => {
+    const current = document.documentElement.getAttribute('data-theme') || 'light';
+    setTheme(current === 'dark' ? 'light' : 'dark');
+  });
+
   const REDUCED = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   /* ---------- 工具 ---------- */

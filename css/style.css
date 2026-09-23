@@ -5,6 +5,7 @@
 
 /* ---------- 1. 设计变量 ---------- */
 :root {
+  /* —— 浅色色板（默认） —— */
   --paper: #f4efe6;        /* 米白纸张底色 */
   --paper-warm: #e9e1d2;   /* 稍深一档，用于色块 */
   --ink: #191512;          /* 主文字 */
@@ -14,12 +15,52 @@
   --rule: rgba(25, 21, 18, .18);
   --rule-fine: rgba(25, 21, 18, .1);
 
+  /* —— RGB 分量（供 rgba 组合使用） —— */
+  --paper-rgb: 244, 239, 230;
+  --paper-warm-rgb: 233, 225, 210;
+  --ink-rgb: 25, 21, 18;
+  --accent-rgb: 200, 69, 31;
+
+  /* —— 复合 rgba（原散落硬编码集中到此） —— */
+  --nav-bg: rgba(244, 239, 230, .9);
+  --nav-shadow: rgba(25, 21, 18, .5);
+  --feature-gradient: rgba(233, 225, 210, .55);
+  --skill-bg: rgba(255, 255, 255, .4);
+  --accent-tint-06: rgba(200, 69, 31, .06);
+  --accent-tint-05: rgba(200, 69, 31, .05);
+  --accent-tint-07: rgba(200, 69, 31, .07);
+
   --serif: 'Noto Serif SC', 'Source Han Serif SC', 'Songti SC', 'SimSun', Georgia, serif;
   --sans: 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', system-ui, sans-serif;
 
   --wrap: 1240px;
   --gut: clamp(20px, 5vw, 64px);
   --sec-gap: clamp(56px, 8vh, 104px);
+}
+
+/* —— 深色主题覆盖 —— */
+[data-theme="dark"] {
+  --paper: #141210;
+  --paper-warm: #1f1c18;
+  --ink: #ede8df;
+  --ink-soft: #a89e92;
+  --accent: #d6572a;
+  --accent-deep: #e07347;
+  --rule: rgba(237, 232, 223, .2);
+  --rule-fine: rgba(237, 232, 223, .12);
+
+  --paper-rgb: 20, 18, 16;
+  --paper-warm-rgb: 31, 28, 24;
+  --ink-rgb: 237, 232, 223;
+  --accent-rgb: 214, 87, 42;
+
+  --nav-bg: rgba(20, 18, 16, .88);
+  --nav-shadow: rgba(0, 0, 0, .6);
+  --feature-gradient: rgba(31, 28, 24, .55);
+  --skill-bg: rgba(255, 255, 255, .04);
+  --accent-tint-06: rgba(214, 87, 42, .14);
+  --accent-tint-05: rgba(214, 87, 42, .12);
+  --accent-tint-07: rgba(214, 87, 42, .16);
 }
 
 /* ---------- 2. 基础重置与排版 ---------- */
@@ -41,6 +82,13 @@ body {
   line-height: 1.8;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
+}
+
+/* 主题切换过渡（仅对非 reduced-motion 用户生效；限定在 body，避免干扰各元素既有动画） */
+@media (prefers-reduced-motion: no-preference) {
+  body {
+    transition: background-color .3s ease, color .3s ease;
+  }
 }
 
 /* 顶部一条强调色带，建立杂志封面感 */
@@ -131,13 +179,13 @@ button { font: inherit; color: inherit; background: none; border: none; cursor: 
   position: sticky;
   top: 0;
   z-index: 60;
-  background: rgba(244, 239, 230, .9);
+  background: var(--nav-bg);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--rule);
   transition: box-shadow .4s ease;
 }
-.nav.is-stuck { box-shadow: 0 10px 30px -22px rgba(25, 21, 18, .5); }
+.nav.is-stuck { box-shadow: 0 10px 30px -22px var(--nav-shadow); }
 
 .nav__inner {
   display: flex;
@@ -222,6 +270,26 @@ button { font: inherit; color: inherit; background: none; border: none; cursor: 
 }
 .nav__toggle.is-open span:first-child { transform: translateY(4px) rotate(45deg); }
 .nav__toggle.is-open span:last-child  { transform: translateY(-4px) rotate(-45deg); }
+
+/* 主题切换按钮：与导航链保持同风格 */
+.nav__theme {
+  font-family: var(--serif);
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: .16em;
+  color: var(--ink-soft);
+  padding: 5px 8px;
+  border: 1px solid var(--rule);
+  transition: color .3s ease, border-color .3s ease, background-color .3s ease;
+  flex-shrink: 0;
+}
+.nav__theme:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+@media (max-width: 720px) {
+  .nav__theme { font-size: 12px; padding: 5px 10px; }
+}
 
 /* ---------- 5. 首屏 ---------- */
 .hero {
@@ -635,7 +703,7 @@ button { font: inherit; color: inherit; background: none; border: none; cursor: 
   margin-left: clamp(-72px, -5vw, -36px);
   padding-left: clamp(20px, 2.4vw, 36px);
   border-left: 3px solid var(--accent);
-  background: linear-gradient(to right, rgba(233, 225, 210, .55), transparent 62%);
+  background: linear-gradient(to right, var(--feature-gradient), transparent 62%);
 }
 .work--feature .work__title { font-size: clamp(32px, 4.6vw, 62px); }
 
@@ -747,7 +815,7 @@ button { font: inherit; color: inherit; background: none; border: none; cursor: 
 }
 
 /* 侧栏：技能点线清单 */
-.skill { border: 1px solid var(--ink); padding: clamp(22px, 2.6vw, 30px); background: rgba(255,255,255,.4); }
+.skill { border: 1px solid var(--ink); padding: clamp(22px, 2.6vw, 30px); background: var(--skill-bg); }
 .skill__title,
 .tools__title {
   font-size: 10px;
@@ -790,7 +858,7 @@ button { font: inherit; color: inherit; background: none; border: none; cursor: 
 .tools__chips span:hover {
   border-color: var(--accent);
   color: var(--accent);
-  background: rgba(200, 69, 31, .06);
+  background: var(--accent-tint-06);
 }
 
 .about__figure { margin-top: 30px; }
@@ -921,7 +989,7 @@ button { font: inherit; color: inherit; background: none; border: none; cursor: 
 }
 a.contact__row:hover {
   padding-inline: 14px;
-  background: rgba(200, 69, 31, .05);
+  background: var(--accent-tint-05);
 }
 .contact__k {
   font-size: 10px;
@@ -1033,7 +1101,7 @@ a.contact__row:hover .contact__a { transform: translateX(6px); }
     font-size: 14px;
   }
   .nav__link::after { display: none; }
-  .nav__link.is-active { background: rgba(200, 69, 31, .07); }
+  .nav__link.is-active { background: var(--accent-tint-07); }
 
   .hero__scroll { display: none; }
   .hero__line--outline { -webkit-text-stroke-width: 1px; }
